@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -87,7 +88,7 @@ public class ResetController {
 		PreparedStatement commentsStatement = null;
 		java.util.Date now = new java.util.Date();
 
-		Random rand = new Random();
+		Random rand = new SecureRandom();
 
 		// Drop existing tables and recreate from schema file
 		recreateDatabaseSchema();
